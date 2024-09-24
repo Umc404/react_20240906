@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import User from './User';
 import CreateUser from './CreateUser';
 
@@ -45,7 +45,7 @@ const UserList = () => {
     });
 
     // const username = inputs.username;
-    // const email = inputs.username;
+    // const email = inputs.email;
 
     // 위 코드와 아래 객체({username, email}) 로 선언한 아래 코드하고 같은 뜻.
     // 구조 분해 할당 : 객체의 구조를 분해하여 변수에 할당하는 방법.
@@ -83,6 +83,7 @@ const UserList = () => {
 
         nextId.current += 1;  //ref() : 재 랜더링이 일어나지 않음.
         console.log(users);
+
     }
     const onRemove = (id) => {
         // filter : 배열의 항목을 제거하기 위해서 사용.
@@ -102,6 +103,12 @@ const UserList = () => {
             ))
         )
     }
+    const countActiveUser = (users) => {
+        // user.active 가 true 인 사용자를 세어서 리턴.
+        return users.filter(user => user.active).length;
+    }
+    const count = useMemo(()=> countActiveUser(users), [users]);
+
     return (
         <div className='userList'>
             {/* 컴포넌트에서 데이터를 하위 컴포넌트에게 전달하는 방법 = props */}
@@ -114,6 +121,7 @@ const UserList = () => {
                     <User user = {u} key={u.id} onRemove={onRemove} onToggle={onToggle}/>
                 ))
             }
+            <div>완료 사용자수 : {count}</div>
         </div>
     );
 };

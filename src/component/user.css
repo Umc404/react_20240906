@@ -1,0 +1,49 @@
+.CreateUser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userList>.user {
+    margin: 0 auto;
+    width: 550px;
+    margin-bottom: 10px;
+}
+.row {
+    display: flex;
+    justify-content: center;
+}
+.row>.col {
+    padding:10px;
+}
+.row>.col>input {
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: 2px solid rgb(94, 94, 184);
+}
+.createBt {
+    width: 90px;
+    height: 36px;
+    font-size: 20px;
+    border: none;
+    background-color: rgb(94, 94, 184);
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+.removeBt {
+    width: 30px;
+    height: 34px;
+    font-size: 20px;
+    border: none;
+    background-color: rgb(94, 94, 184);
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 18px;
+}
+.user>.userArea {
+    display: flex;
+    justify-content: space-between;
+}

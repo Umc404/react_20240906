@@ -4,7 +4,7 @@ const User = ({user, onRemove, onToggle}) => {
 
     return (
         <div className='user'>
-            <h3>
+            <div class='userArea'>
                 <span style={{
                     cursor:'pointer',
                     color: user.active?'green':'black'
@@ -14,8 +14,8 @@ const User = ({user, onRemove, onToggle}) => {
                 </span>
                 <span>({user.email})</span>
                 {/* function으로 매개변수를 전달할 경우 */}
-                <button onClick={()=>onRemove(user.id)}>X</button>
-            </h3>
+                <button class='removeBt' onClick={()=>onRemove(user.id)}>X</button>
+            </div>
         </div>
     );
 };
